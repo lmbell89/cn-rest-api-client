@@ -11,7 +11,7 @@ const Home = () => {
 
   const refresh = async () => {
     if (loadedAll) return
-    
+
     const newPosts = await getPosts(page)
     if (newPosts.length > 0) {
       setPosts([...posts, ...newPosts])
@@ -23,9 +23,9 @@ const Home = () => {
 
   return (
     <div>
-      <h1>Home</h1>
+      <h1 className="title">Home</h1>
       {posts.map(post => <Post content={post.content} comments={post.comments} />)}
-      <HomeLoader page={page} refresh={refresh} />
+      {loadedAll ? null : <HomeLoader page={page} refresh={refresh} />}
     </div>
   )
 }
