@@ -6,6 +6,16 @@
   flex-direction: column;
 }
 
+.commentForm {
+  display: flex;
+  padding: 0 15px 15px 15px;
+}
+
+.commentInput {
+  flex-grow: 1;
+  margin-right: 10px !important;
+}
+
 .comment {
   margin: 10px;
 }

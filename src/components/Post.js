@@ -7,6 +7,7 @@ import Collapse from '@material-ui/core/Collapse'
 import ChatBubbleIcon from '@material-ui/icons/ChatBubble'
 
 import Comment from './Comment'
+import CommentForm from './CommentForm'
 
 const Post = ({ content, comments }) => {
   const [expanded, setExpanded] = useState(false)
@@ -17,7 +18,7 @@ const Post = ({ content, comments }) => {
         {content}
       </CardContent>
 
-      <CardActions disableSpacing>
+      <CardActions>
 
         <IconButton
           onClick={() => setExpanded(!expanded)}
@@ -30,7 +31,7 @@ const Post = ({ content, comments }) => {
 
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <AddComment/>
+          <CommentForm />
           {comments.map(comment => <Comment content={comment.content} />)}
         </CardContent>
       </Collapse>
